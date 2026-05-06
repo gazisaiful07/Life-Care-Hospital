@@ -1,0 +1,268 @@
+/* --- Root Variables --- */
+:root {
+    --primary-blue: #0056b3;
+    --secondary-blue: #007bff;
+    --accent-green: #28a745;
+    --light-green: #e9f7ef;
+    --white: #ffffff;
+    --light-gray: #f8f9fa;
+    --dark-text: #2c3e50;
+    --shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    --transition: all 0.3s ease;
+}
+
+/* --- General Reset --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    line-height: 1.6;
+    color: var(--dark-text);
+    background-color: var(--white);
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+ul { list-style: none; }
+a { text-decoration: none; color: inherit; }
+
+.section-title {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.section-title h2 {
+    font-size: 2.5rem;
+    color: var(--primary-blue);
+}
+
+/* --- Navbar --- */
+header {
+    background: var(--white);
+    padding: 15px 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: var(--shadow);
+}
+
+.navbar .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--primary-blue);
+}
+
+.logo span { color: var(--accent-green); }
+
+.nav-links {
+    display: flex;
+    gap: 25px;
+    align-items: center;
+}
+
+.nav-links a:hover { color: var(--secondary-blue); }
+
+.btn-nav {
+    background: var(--accent-green);
+    color: white !important;
+    padding: 8px 20px;
+    border-radius: 25px;
+}
+
+.hamburger {
+    display: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+/* --- Hero Section --- */
+.hero {
+    height: 90vh;
+    background: linear-gradient(rgba(255,255,255,0.8), rgba(255,255,255,0.8)), 
+                url('https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?w=1200');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+}
+
+.hero-content h1 {
+    font-size: 4rem;
+    line-height: 1.2;
+    margin-bottom: 20px;
+}
+
+.hero-content h1 span { color: var(--secondary-blue); }
+
+.hero-content p {
+    font-size: 1.1rem;
+    max-width: 600px;
+    margin-bottom: 30px;
+}
+
+.cta-btn {
+    background: var(--primary-blue);
+    color: white;
+    padding: 15px 35px;
+    border-radius: 30px;
+    font-weight: 600;
+    display: inline-block;
+    transition: var(--transition);
+    border: none;
+    cursor: pointer;
+}
+
+.cta-btn:hover {
+    background: var(--accent-green);
+    transform: translateY(-3px);
+}
+
+/* --- About & Stats --- */
+.about { padding: 80px 0; }
+.about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+}
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.stat-card {
+    background: var(--light-green);
+    padding: 30px;
+    border-radius: 15px;
+    text-align: center;
+    transition: var(--transition);
+}
+
+.stat-card:hover { transform: scale(1.05); }
+
+.stat-card i { font-size: 2.5rem; color: var(--accent-green); margin-bottom: 10px; }
+
+/* --- Services --- */
+.services { padding: 80px 0; background: var(--light-gray); }
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 25px;
+}
+
+.service-box {
+    background: var(--white);
+    padding: 40px;
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: var(--shadow);
+    transition: var(--transition);
+}
+
+.service-box:hover { background: var(--primary-blue); color: white; }
+.service-box i { font-size: 3rem; color: var(--secondary-blue); margin-bottom: 20px; }
+.service-box:hover i { color: white; }
+
+/* --- Doctors Section --- */
+.doctors { padding: 80px 0; }
+.doctors-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.doctor-card {
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: var(--shadow);
+}
+
+.doctor-card img { width: 100%; height: 350px; object-fit: cover; }
+.doc-info { padding: 20px; text-align: center; }
+.doc-info span { color: var(--accent-green); font-weight: 600; }
+
+/* --- Nurses --- */
+.nurses { padding: 80px 0; background: var(--light-green); }
+.nurses-flex { display: flex; align-items: center; gap: 50px; flex-wrap: wrap; }
+.nurses-content { flex: 1; min-width: 300px; }
+.nurses-image { flex: 1; min-width: 300px; }
+.nurses-image img { width: 100%; border-radius: 15px; }
+.nurse-features { margin-top: 20px; }
+.nurse-features li { margin-bottom: 10px; }
+.nurse-features i { color: var(--accent-green); margin-right: 10px; }
+
+/* --- Appointment Form --- */
+.appointment { padding: 80px 0; }
+.appointment-card {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 50px;
+    background: var(--white);
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+.appointment-card h2 { text-align: center; margin-bottom: 30px; }
+
+.form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+
+input, select, textarea {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    outline: none;
+}
+
+.hidden { display: none; text-align: center; color: var(--accent-green); font-weight: bold; padding: 10px; }
+
+/* --- Contact & Footer --- */
+.contact { padding: 80px 0; background: #eee; }
+.contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 50px; }
+
+footer { background: #1a252f; color: white; padding: 60px 0 20px; }
+.footer-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 40px; }
+.newsletter { display: flex; }
+.newsletter input { border-radius: 8px 0 0 8px; margin-bottom: 0; }
+.newsletter button { background: var(--accent-green); border: none; padding: 0 20px; border-radius: 0 8px 8px 0; color: white; }
+
+.copyright { text-align: center; margin-top: 30px; opacity: 0.7; font-size: 0.9rem; }
+
+/* --- Responsive Design --- */
+@media (max-width: 768px) {
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 70px;
+        left: 0;
+        width: 100%;
+        background: white;
+        padding: 20px;
+        box-shadow: var(--shadow);
+    }
+    .nav-links.active { display: flex; }
+    .hamburger { display: block; }
+    .hero-content h1 { font-size: 2.5rem; }
+    .about-grid, .form-row, .contact-grid { grid-template-columns: 1fr; }
+}
